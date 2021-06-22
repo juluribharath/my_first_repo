@@ -1,17 +1,22 @@
+#!/usr/bin/env bash
 echo "enter ur number"
 
-count=3
+count=$(ls -A | wc -l)
 read number
-while [[ $number -ne 10 ]]
+while [[ $number -ne $count ]]
 do
-echo $number
-if [ $number -gt 10 ]
+read number
+if [[ $number -gt $count ]]
  then 
     echo "it is greater"
-    read number
+    
 else 
+  if [[ $number -eq $count ]]
+ then 
+    echo "good job"
+  else
     echo "it is low"
-    read number
+   fi
 fi
 done
-echo "bye bye"
+echo "you did it ,bye bye"
